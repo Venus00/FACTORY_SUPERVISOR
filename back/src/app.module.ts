@@ -7,11 +7,10 @@ import { DrizzleModule } from './drizzle/drizzle.module';
 import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
-
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', '..', 'front', 'dist'),
+      rootPath: join(__dirname, '..', '..', '..', 'front', 'dist'),
     }),
     ConfigModule.forRoot({ isGlobal: true }),
     MqttModule,
