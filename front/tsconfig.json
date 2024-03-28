@@ -1,0 +1,27 @@
+{
+    "include": [
+      "src/*.tsx",
+      "src/**/*.ts",
+      "src/**/*.d.ts",
+      "src/**/*.tsx",
+      "src/**/*.vue"
+    ],
+    "compilerOptions": {
+      "jsx": "react-jsx",
+      "moduleResolution": "node",
+      "target": "ESNext",
+      "strict": false,
+      "noImplicitAny": false,
+      "noEmit": true,
+      "sourceMap": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "./src/*"
+        ]
+      },
+      
+    }
+  }

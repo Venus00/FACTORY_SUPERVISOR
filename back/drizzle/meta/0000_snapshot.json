@@ -1,0 +1,57 @@
+{
+  "id": "f65e8f75-d484-4a63-bee6-ce2ec2a8dba1",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "5",
+  "dialect": "pg",
+  "tables": {
+    "sensors": {
+      "name": "sensors",
+      "schema": "",
+      "columns": {
+        "serial": {
+          "name": "serial",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "stauts": {
+          "name": "stauts",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "result_test": {
+          "name": "result_test",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "firmware_version": {
+          "name": "firmware_version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "sensors_serial_unique": {
+          "name": "sensors_serial_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "serial"
+          ]
+        }
+      }
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
