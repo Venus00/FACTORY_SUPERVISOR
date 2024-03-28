@@ -46,6 +46,7 @@ export class DeviceService implements OnModuleInit {
 
   async createDevice(serial: string) {
     try {
+      console.log(serial);
       CREATE_DEVICE.name = serial;
       CREATE_DEVICE.serial = serial;
       CREATE_DEVICE.credential.username = serial;
@@ -54,7 +55,7 @@ export class DeviceService implements OnModuleInit {
       const result = await apiClient.post('/device', CREATE_DEVICE);
       console.log(result.data);
     } catch (error) {
-      //console.log(error.response);
+      console.log(error.response);
     }
   }
   async update(serial: string, firmware_version: string) {
