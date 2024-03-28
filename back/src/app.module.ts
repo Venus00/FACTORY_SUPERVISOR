@@ -5,9 +5,14 @@ import { MqttModule } from './mqtt/mqtt.module';
 import { DeviceModule } from './device/device.module';
 import { DrizzleModule } from './drizzle/drizzle.module';
 import { ConfigModule } from '@nestjs/config';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'dist'),
+    }),
     ConfigModule.forRoot({ isGlobal: true }),
     MqttModule,
     DeviceModule,
