@@ -6,6 +6,6 @@ export const apiClient = axios.create({
   baseURL: process.env.DIGIEYE_API,
   headers: {
     'Content-type': 'application/json',
-    'Authorization': `Bearer ${process.env.token}`,
+    'Authorization': `Bearer ${process.env.TOKEN}`,
   },
 });
