@@ -11,7 +11,7 @@ export class HistoryController {
     try {
       const result = await apiClient.get('/dpc-history/api/events', {
         params: {
-          take: 10,
+          take: 1000,
           where: JSON.stringify({
             type: 'CONNEXION',
             serial,
