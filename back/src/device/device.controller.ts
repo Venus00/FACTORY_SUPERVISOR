@@ -14,6 +14,7 @@ export class DeviceController {
   }
   @Post()
   async createDevice(@Body() data: CreateDeviceDto) {
+    console.log(data.serial);
     await this.devicesService.createDevice(data.serial);
   }
 }

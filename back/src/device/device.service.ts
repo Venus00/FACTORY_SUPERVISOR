@@ -46,7 +46,6 @@ export class DeviceService implements OnModuleInit {
 
   async createDevice(serial: string) {
     try {
-      console.log(serial);
       CREATE_DEVICE.name = serial;
       CREATE_DEVICE.serial = serial;
       CREATE_DEVICE.credential.username = serial;

@@ -8,6 +8,7 @@ import { useNotification } from 'react-hook-notification';
 function Dashboard() {
     const notification = useNotification();
     const getDevices = async () => {
+        console.log("trying")
         try {
             const result = await ApiClient.get('/device')
             console.log(result);
@@ -20,7 +21,8 @@ function Dashboard() {
     const { data, isLoading } = useQuery({
         queryFn: getDevices,
         queryKey: ['devices'],
-        initialData: []
+        initialData: [],
+        refetchInterval: 2000,
     });
 
     const onSubmit = async (serial) => {
