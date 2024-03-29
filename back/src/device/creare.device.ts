@@ -9,12 +9,12 @@ export const CREATE_DEVICE = {
     attributes: {
       pub_topic: [
         {
-          pattern: 'nxt/factory/devices/+/+',
+          pattern: 'Nextronic/devices/+/data',
         },
       ],
       sub_topic: [
         {
-          pattern: 'nxt/factory/devices/+/+',
+          pattern: 'Nextronic/devices/+/rpc',
         },
       ],
       client_id: 'client_1',
