@@ -3,12 +3,14 @@ import { FaHome } from "react-icons/fa";
 import Control from '@/assets/control.png';
 import { MdOutlineFactory } from "react-icons/md";
 import { CiSettings } from "react-icons/ci";
+import { useNavigate } from 'react-router-dom';
 const Menus = [
     { title: "Dashboard", src: <FaHome size={40} /> },
     { title: "Settings", src: <CiSettings size={40} /> },
 ];
 
 function SideBar() {
+    const navigate = useNavigate();
     const [open, setOpen] = useState(true);
     return (
         <div className="flex bg-gray-700">
@@ -35,6 +37,7 @@ function SideBar() {
                     {Menus.map((Menu, index) => (
                         <li
                             key={index}
+                            onClick={() => navigate('/dashboard')}
                             className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
               ${Menu.gap ? "mt-9" : "mt-2"} ${index === 0 && "bg-light-white"
                                 } `}

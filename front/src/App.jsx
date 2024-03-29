@@ -6,7 +6,7 @@ import { Route,Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
 import { ThemeProvider } from 'next-themes'
 import {QueryClient, QueryClientProvider} from 'react-query';
-import History from './pages/History'
+import History from './pages/History';
 function App() {
   const queryClient = new QueryClient();
   return (
