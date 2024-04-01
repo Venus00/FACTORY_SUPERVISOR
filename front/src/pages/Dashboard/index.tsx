@@ -8,10 +8,10 @@ import { useNotification } from 'react-hook-notification';
 function Dashboard() {
     const notification = useNotification();
     const getDevices = async () => {
-        console.log("trying")
         try {
-            const result = await ApiClient.get('/device')
+            let result = await ApiClient.get('/device')
             console.log(result);
+            result.data.sort((a, b) => a.serial.localeCompare(b.serial))
             return result.data;
         } catch (error) {
             console.log(error);

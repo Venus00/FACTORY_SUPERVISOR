@@ -61,15 +61,15 @@ export const columns: ColumnDef<Device>[] = [
         ),
     },
 
-    // {
-    //     accessorKey: "status",
-    //     header: "Status",
-    //     cell: ({ row }) => (
-    //         <div className="capitalize w-20">
-    //             <p className={`${row.getValue("status") === 'connected' ? 'bg-green-500' : 'bg-red-500'} text-white rounded-lg p-2`}>{row.getValue("status")}</p>
-    //         </div>
-    //     ),
-    // },
+    {
+        accessorKey: "status",
+        header: "Status",
+        cell: ({ row }) => (
+            <div className="capitalize w-20">
+                <p className={`${row.getValue("status") === 'Connected' ? 'bg-green-500 p-2' : 'bg-red-500 px-16 py-2'} flex justify-center items-center m-0 text-white rounded-lg`}>{row.getValue("status")}</p>
+            </div>
+        ),
+    },
     {
         accessorKey: "firmware_version",
         header: () => <div className="">Firmware Version</div>,
@@ -110,6 +110,7 @@ export const columns: ColumnDef<Device>[] = [
 ]
 
 export default function DataTable({ data }) {
+
 
     const navigate = useNavigate();
     const [sorting, setSorting] = React.useState<SortingState>([])
