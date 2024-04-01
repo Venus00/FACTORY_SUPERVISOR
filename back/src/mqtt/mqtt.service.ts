@@ -17,7 +17,7 @@ export class MqttService {
   }
 
   onConnect() {
-    console.log('connected');
+    //console.log('connected');
     this.client.subscribe(process.env.MQTT_TOPIC);
   }
 
