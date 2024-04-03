@@ -11,7 +11,7 @@ function Dashboard() {
         try {
             let result = await ApiClient.get('/device')
             console.log(result);
-            result.data.sort((a, b) => a.serial.localeCompare(b.serial))
+            result.data.sort((a, b) => a.id < b.id)
             return result.data;
         } catch (error) {
             console.log(error);

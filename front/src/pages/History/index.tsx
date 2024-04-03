@@ -26,7 +26,8 @@ function History() {
     const { data, isLoading } = useQuery({
         queryFn: getHistory,
         queryKey: [serial],
-        initialData: []
+        initialData: [],
+        refetchInterval: 2000
     });
 
     return (
