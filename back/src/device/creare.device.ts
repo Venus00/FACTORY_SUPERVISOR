@@ -9,12 +9,12 @@ export const CREATE_DEVICE = {
     attributes: {
       pub_topic: [
         {
-          pattern: 'meteo/devices/+/+',
+          pattern: 'nextronic/devices/+/+',
         },
       ],
       sub_topic: [
         {
-          pattern: 'meteo/devices/$/rpc',
+          pattern: 'nextronic/devices/$id/rpc',
         },
       ],
       client_id: 'client_1',

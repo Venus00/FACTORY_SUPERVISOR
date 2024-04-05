@@ -74,16 +74,16 @@ export class DeviceService implements OnModuleInit {
 
   async createDevice(serial: string) {
     try {
-      CREATE_DEVICE.name = serial;
-      CREATE_DEVICE.serial = serial;
-      CREATE_DEVICE.credential.username = serial;
-      CREATE_DEVICE.credential.password = serial;
-      CREATE_DEVICE.protocolCredential.attributes.client_id = serial;
-      CREATE_DEVICE.protocolCredential.attributes.sub_topic[0].pattern.replace(
-        '$',
-        serial,
-      );
-      const result = await apiClient.post('/device', CREATE_DEVICE);
+      const payload = CREATE_DEVICE;
+      payload.name = serial;
+      payload.serial = serial;
+      payload.credential.username = serial;
+      payload.credential.password = serial;
+      payload.protocolCredential.attributes.client_id = serial;
+      payload.protocolCredential.attributes.sub_topic[0].pattern = `nextronic/devices/${serial}/rpc`;
+      payload.name = serial;
+      console.log('payload', payload.protocolCredential.attributes.sub_topic);
+      const result = await apiClient.post('/device', payload);
       console.log(result.data);
       console.log('insert device now');
       await this.create({
