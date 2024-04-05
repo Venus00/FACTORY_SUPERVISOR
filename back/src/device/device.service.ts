@@ -79,6 +79,10 @@ export class DeviceService implements OnModuleInit {
       CREATE_DEVICE.credential.username = serial;
       CREATE_DEVICE.credential.password = serial;
       CREATE_DEVICE.protocolCredential.attributes.client_id = serial;
+      CREATE_DEVICE.protocolCredential.attributes.sub_topic[0].pattern.replace(
+        '$',
+        serial,
+      );
       const result = await apiClient.post('/device', CREATE_DEVICE);
       console.log(result.data);
       console.log('insert device now');

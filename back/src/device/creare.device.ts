@@ -9,19 +9,19 @@ export const CREATE_DEVICE = {
     attributes: {
       pub_topic: [
         {
-          pattern: 'Nextronic/devices/+/data',
+          pattern: 'meteo/devices/+/+',
         },
       ],
       sub_topic: [
         {
-          pattern: 'Nextronic/devices/+/rpc',
+          pattern: 'meteo/devices/$/rpc',
         },
       ],
       client_id: 'client_1',
     },
   },
-  groupId: 7,
-  deviceProfileId: 4,
+  // groupId: 7,
+  // deviceProfileId: 4,
   serial: 'device_oussama_farhat',
   name: 'device_oussama_farhat',
 };
