@@ -9,10 +9,10 @@ function Dashboard() {
     const notification = useNotification();
     const getDevices = async () => {
         try {
-            let result = await ApiClient.get('/device')
-            console.log(result);
-            result.data.sort((a, b) => a.id < b.id)
-            return result.data;
+            let result = await ApiClient.get('/device');
+            console.log(result.data)
+            const data = result.data.sort((a, b) => a.createdAt < b.createdAt);
+            return data;
         } catch (error) {
             console.log(error);
             return [];
@@ -44,7 +44,6 @@ function Dashboard() {
             <div className='px-12 '>
                 <CreateDevice onSubmit={onSubmit} />
             </div>
-
             <div className='px-12'>
                 <DataTable data={data} />
             </div>
