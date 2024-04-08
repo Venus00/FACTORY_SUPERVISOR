@@ -11,6 +11,7 @@ export class DeviceController {
 
   @Get()
   async all() {
+    console.log('get device');
     try {
       const result = await apiClient.get('/device');
       console.log(result.data.results);
